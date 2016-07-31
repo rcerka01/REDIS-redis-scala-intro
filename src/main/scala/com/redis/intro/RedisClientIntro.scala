@@ -5,6 +5,37 @@ import com.redis.RedisClient
 /**
   * Created by raitis on 30/07/2016.
   */
+
+object RedisClientIntro extends App {
+
+  val r = new RedisClient("localhost", 6379)
+  r.flushdb // delete all
+
+  // LISTS
+
+  r.set("key", "some value")
+  val res1 = r.get("key")
+  println(res1)
+
+  // list operations
+  r.lpush("list-1", "foo")
+  println(r.lrange("list-1", 0, -1))
+
+  r.rpush("list-1", "bar")
+  println(r.lrange("list-1", 0, -1))
+
+  println(r.llen("list-1"))
+
+  // HASH
+
+  r.hmset("hash", Map("field1" -> "1", "field2" -> 2))
+  println(r.hgetall("hash"))
+  println(r.hget("hash", "field1"))
+  // or
+  println(r.hmget[String,String]("hash", "field1", "field2"))
+
+}
+
 // SET UP
 //
 // install:
@@ -158,37 +189,3 @@ import com.redis.RedisClient
 // select 0 - delect db
 // quit - quit redis
 // auth - in config file set -> requirepass password and restart redis server
-
-
-
-
-
-object RedisClientIntro extends App {
-
-  val r = new RedisClient("localhost", 6379)
-  r.flushdb // delete all
-
-  // LISTS
-
-  r.set("key", "some value")
-  val res1 = r.get("key")
-  println(res1)
-
-  // list operations
-  r.lpush("list-1", "foo")
-  println(r.lrange("list-1", 0, -1))
-
-  r.rpush("list-1", "bar")
-  println(r.lrange("list-1", 0, -1))
-
-  println(r.llen("list-1"))
-
-  // HASH
-
-  r.hmset("hash", Map("field1" -> "1", "field2" -> 2))
-  println(r.hgetall("hash"))
-  println(r.hget("hash", "field1"))
-  // or
-  println(r.hmget[String,String]("hash", "field1", "field2"))
-
-}
