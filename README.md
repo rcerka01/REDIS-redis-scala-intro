@@ -2,42 +2,27 @@
 
 ### SET UP
 
- install:
- ```sh
-   brew install redis
- ```
+ install (mac): ```sh brew install redis ```
 
- run server:
-```sh
-   redis-server /usr/local/etc/redis.conf
-    ```
+ run server: ```sh redis-server /usr/local/etc/redis.conf ```
 
- redis.conf:
+ redis.conf: ```sh change port, bind host, etc. ```
 
-   change port,
-   bind host
+ run client: ```sh redis-cli ```
 
- run client:
-  ```sh
-   redis-cli
-    ```
-
- run monitor:
-```sh
- redis-cli monitor
-  ```
+ run monitor: ```sh redis-cli monitor ```
 
 ### DB
 
- change db:
-  select 1
-  select 2
-  etc
-
- After restart data is saved.
- To delete data:
-   flushdb
-   flushall (for multiple db)
+ change db:<br />
+  select1<br />
+  select 2<br />
+  etc.<br />
+ <br />
+ After restart data is saved.<br />
+ To delete data:<br />
+   flushdb<br />
+   flushall (for multiple db)<br />
 
 ### STRING AND KEYS
 
