@@ -2,64 +2,48 @@
 
 ### SET UP
 
- install:
- ```sh
-   brew install redis
- ```
+ install (mac): ```sh brew install redis ```
 
- run server:
-```sh
-   redis-server /usr/local/etc/redis.conf
-    ```
+ run server: ```sh redis-server /usr/local/etc/redis.conf ```
 
- redis.conf:
+ redis.conf: ```sh change port, bind host, etc. ```
 
-   change port,
-   bind host
+ run client: ```sh redis-cli ```
 
- run client:
-  ```sh
-   redis-cli
-    ```
-
- run monitor:
-```sh
- redis-cli monitor
-  ```
+ run monitor: ```sh redis-cli monitor ```
 
 ### DB
 
- change db:
-  select 1
-  select 2
-  etc
-
- After restart data is saved.
- To delete data:
-   flushdb
-   flushall (for multiple db)
+ change db:<br />
+  &nbsp;select1<br />
+  &nbsp;select 2<br />
+  &nbsp;etc.<br />
+ <br />
+ After restart data is saved.<br />
+ To delete data:<br />
+   &nbsp;flushdb<br />
+   &nbsp;flushall (for multiple db)<br />
 
 ### STRING AND KEYS
 
- set name Ray
- set hobby "computers reading"
- get name
- get hobby
- mset mamal whale insect "June Bug" (mset key name key name key name etc)
- get mamal
- get insect
-
- keys name
- keys * or keys nam*
- exists dog
- del name - return 1 or 0
- rename name myname - rename key
- setnx or renamenx - do if exist
-
- pexpire name - expire in 5s
- persist name - check if it still exist (0 or 1)
- ttl name - time to live (sec or -1)
-
+ set name Ray<br />
+ set hobby "computers reading"<br />
+ get name<br />
+ get hobby<br />
+ mset mamal whale insect "June Bug" (mset key name key name key name etc)<br />
+ get mamal<br />
+ get insect<br />
+ <br />
+ keys name<br />
+ keys * or keys nam*<br />
+ exists dog<br />
+ del name - return 1 or 0<br />
+ rename name myname - rename key<br />
+ setnx or  <br />
+ pexpire name - expire in 5s<br />
+ persist name - check if it still exist (0 or 1)<br />
+ ttl name - time to live (sec or -1)<br />
+ <br />
  strlen name
 
 ### INT
